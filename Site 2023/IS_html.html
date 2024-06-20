@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	
+	<title>Insertion Sort</title>
+
+	<link href="IS_style.css" rel="stylesheet" />
+</head>
+
+<body >
+
+	<div class="PagPr"><a href="PP_html.html">Acasă</a></div>
+
+	<section class="titlu">Sortarea prin inserție</section>
+	<section class="continut"></section>
+		
+	<div class="butoane">
+		<button onclick="generate()" id="Buton1" >
+			Generează</button>
+			
+		<button onclick="SelectionSort(), disable()" id="Buton2" >
+			Sortează</button>
+	</div>
+
+
+	<div class="descriere">
+		
+		<div class="baraOrizontala"></div>
+
+		<div class="text">
+			<h3 id="indent1">Mod de funcționare</h3>
+
+			<p>Această metodă de sortare se bazează pe inserarea repetată a elementelor în secvența din stânga acestora astfel încât aceasta secvență să fie ordonată.</p>
+			<p>Să spunem că avem un vector V[] cu n elemente.</p>
+			<p>Parcurgem vectorul cu indicele i. Dacă secvența 0, 1, ... i - 1 este ordonată atunci putem insera elementul V[i] in această secvență încât să fie ordonată secvența cu indicii 0, 1, ... i - 1, i.</p>
+			<p>Luăm pe rând fiecare element V[i] și îl înserăm în secvența din stânga sa.</p>
+			<p>După inserarea ultimului element din vector, întreg vectorul este ordonat.</p>
+		</div>
+
+		<div class="text">
+			<h3 id="indent1">Complexitate</h3>
+			<p>Complexitatea acestui algoritm este una pătratica (O(n<sup>2</sup>)), dar avantajul acestuia este ușurința de transpus în cod, fiind util pentru seturi mici de date.</p>
+		</div>
+
+		<div class="baraOrizontala"></div>
+
+		<h3 id="indent1">Algoritm în C++</h3>
+
+		<div class="cod">
+
+			<p class="aqua">void</p>
+			<p>sortare <p class="roz">(</p><p class="aqua">int</p></p>
+			<p>v <p class="roz">[],</p></p>
+			<p class="aqua">int</p>
+			<p>n <p class="roz">)</p></p>
+
+			<br>
+
+			<p class="roz">{</p> 
+
+			<br>
+
+			<p id="indent1" class="aqua">for <p class="roz">(</p><p class="aqua">int</p></p>
+			<p>i</p>
+			<p class="roz">=</p>
+			<p class="cifra">1<p class="roz">;</p></p>
+			<p>i</p>
+			<p class="roz"><</p>
+			<p>n</p><p class="roz">;</p></p>
+			<p class="roz">++</p><p>i<p class="roz">)</p></p></p>
+
+			<br>
+
+		    <p id="indent1" class="roz">{</p> 
+
+		    <br>
+
+		    <p id="indent2" class="aqua" >int</p>
+		    <p>x</p>
+		    <p class="roz">=</p>
+		    <p>v<p class="roz">[</p><p>i</p><p class="roz">];</p></p>
+
+            <br>
+
+            <p id="indent2" class="aqua" >int</p>
+		    <p>p</p>
+		    <p class="roz">=</p>
+		    <p>i<p><p></p>
+            <p class="roz">-</p>
+            <p>1</p><p class="roz">;</p>
+	        
+	        <br>
+
+	        <p id="indent2" class="aqua">while<p class="roz">(</p><p>p</p></p>
+			<p class="roz">>=</p>
+			<p class="cifra">0</p>
+            <p class="roz">&&</p>
+			<p>v<p class="roz">[</p><p>p</p><p class="roz">]</p>
+			<p class="roz">></p>
+			<p>x<p class="roz">)</p></p>
+
+			<br>
+
+			<p id="indent3">v<p class="roz">[</p><p>p</p>
+            <p class="roz">+</p>
+			<p class="cifra">1</p><p class="roz">]</p></p>
+			<p class="roz">=</p>
+            <p>v<p class="roz">[</p><p>p</p><p class="roz">]</p><p class="roz">,</p>
+            <p>p<p class="roz">--</p><p class="roz">;</p>
+
+		    <br>
+
+		    <p id="indent2">v<p class="roz">[</p><p>p</p>
+            <p class="roz">+</p>
+			<p class="cifra">1</p><p class="roz">]</p></p>
+			<p class="roz">=</p>
+            <p>x</p><p class="roz">;</p>
+
+			<br>
+
+		    <p id="indent1" class="roz">}</p>
+
+		    <br>
+
+			<p class="roz">}</p>
+
+		</div>
+
+	</div>
+
+</body>
+
+<script src="IS_script.js"></script>
+</html>

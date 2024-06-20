@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	
+	<title>Selection Sort</title>
+
+	<link href="SS_style.css" rel="stylesheet" />
+</head>
+
+<body >
+
+	<div class="PagPr"><a href="PP_html.html">Acasă</a></div>
+
+	<section class="titlu">Sortarea prin selecție</section>
+	<section class="continut"></section>
+		
+	<div class="butoane">
+		<button onclick="generate()" id="Buton1" >
+			Generează</button>
+			
+		<button onclick="SelectionSort(), disable()" id="Buton2" >
+			Sortează</button>
+	</div>
+
+
+	<div class="descriere">
+		
+		<div class="baraOrizontala"></div>
+
+		<div class="text">
+			<h3 id="indent1">Mod de funcționare</h3>
+
+			<p>Această metodă de sortare se bazează pe găsirea minimului / maximului din vector și punerea sa pe prima poziție, apoi găsirea celui de al doilea minim / maxim și punerea sa pe a doua poziție a vectorului și tot așa, până când toate elementele vectorului sunt sortate.</p>
+			<p>Să spunem că avem un vector V[] cu n elemente.</p>
+			<p>Parcurgem vectorul cu indicele i, apoi parcurgem cu indicele j elementele din dreapta lui V[i] și găsim valoarea cea mai mare / mică.</p>
+			<p>Reținem într-o variabilă auxiliară, să spunem ind, indicele valorii maxime / minime.</p>
+			<p>După ce am parcurs toate elementele din dreapta lui V[i], interschimbăm elementul de pe poziția V[i] cu elementul de pe poziția V[ind] (elementul minim / maxim).</p>
+		</div>
+
+		<div class="text">
+			<h3 id="indent1">Complexitate</h3>
+
+			<p>Din punct al vedere al complexității acest algoritm are un timp pătratic de lucru (O(n<sup>2</sup>)) dar este un algoritm foarte ușor de memorat, de scris și util pentru sortarea unor seturi de date mici.</p>
+		</div>
+
+		<div class="baraOrizontala"></div>
+
+		<h3 id="indent1">Algoritm în C++</h3>
+
+		<div class="cod">
+
+			<p class="aqua">void</p>
+			<p>sortare <p class="roz">(</p><p class="aqua">int</p></p>
+			<p>v <p class="roz">[],</p></p>
+			<p class="aqua">int</p>
+			<p>n <p class="roz">)</p></p>
+
+			<br>
+
+			<p class="roz">{</p> 
+
+			<br>
+
+			<p id="indent1" class="aqua">for <p class="roz">(</p><p class="aqua">int</p></p>
+			<p>i</p>
+			<p class="roz">=</p>
+			<p class="cifra">0<p class="roz">;</p></p>
+			<p>i</p>
+			<p class="roz"><</p>
+			<p>n</p>
+			<p class="roz">-</p>
+			<p class="cifra">1<p class="roz">;</p></p>
+			<p class="roz">++</p><p>i<p class="roz">)</p></p></p>
+
+			<br>
+
+		    <p id="indent1" class="roz">{</p> 
+
+		    <br>
+
+		    <p id="indent2" class="aqua" >int</p>
+		    <p>ind</p>
+		    <p class="roz">=</p>
+		    <p>i<p class="roz">;</p></p>
+	        
+	        <br>
+
+	        <p id="indent2" class="aqua">for<p class="roz">(</p><p class="aqua">int</p></p>
+			<p>j</p>
+			<p class="roz">=</p>
+			<p>i</p>
+			<p class="roz">+</p>
+			<p class="cifra">1<p class="roz">;</p></p>
+			<p>j</p>
+			<p class="roz"><</p>
+			<p>n<p class="roz">;</p></p>
+			<p class="roz">++</p>	
+			<p>j<p class="roz">)</p></p>
+
+			<br>
+
+			<p id="indent3" class="aqua">if<p class="roz">(</p><p>v</p><p class="roz">[</p><p>j</p><p class="roz">]</p></p>
+			<p class="roz"><</p>
+			<p>v<p class="roz">[</p><p>ind</p><p class="roz">]</p><p class="roz">)</p></p>
+
+			<br>
+
+		    <p id="indent4">ind</p>
+		    <p class="roz">=</p>
+		    <p>j<p class="roz">;</p></p>
+
+		    <br>
+
+		    <p id="indent2" class="aqua">swap<p class="roz">(</p><p>v</p><p class="roz">[</p><p>i</p><p class="roz">]</p><p class="roz">,</p></p>
+			<p>v<p class="roz">[</p><p>ind</p><p class="roz">]</p><p class="roz">)</p><p class="roz">;</p></p>
+
+			<br>
+
+		    <p id="indent1" class="roz">}</p>
+
+		    <br>
+
+			<p class="roz">}</p>
+
+		</div>
+
+	</div>
+
+</body>
+
+<script src="SS_script.js"></script>
+</html>

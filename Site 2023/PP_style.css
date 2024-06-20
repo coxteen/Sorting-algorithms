@@ -1,0 +1,124 @@
+:root {
+  --background: #00001a;
+
+  --primary: #00fff2;
+  --secondary: #00ff6a;
+
+  --roz: rgb(255, 0, 127);
+
+  color: white;
+}
+
+body {
+	background-color: var(--background);
+	color: white;
+
+	font-family: monospace;
+}
+
+h1 {
+	text-align: center;
+	padding: 1.6vh 0vh;
+	font-size: 36px;
+
+	color: var(--primary);
+}
+
+.baraOrizontala {
+	background: rgb(0,255,218);
+	position: relative;
+
+	margin: 0 3vw;
+	height: 5px;
+
+	border-radius: 30px;
+}
+
+#bo1 {
+	margin: 0 3vw;
+}
+
+#bo2 {
+	margin: 0 6vw;
+}
+
+.baraOrizontala::before {
+	position: absolute;
+
+	inset: 0;
+	content: '';
+
+	background: linear-gradient(60deg, rgba(0,255,59,1) 100%, rgba(0,255,218,1) 36%);
+	animation: animate 20s linear infinite;
+	background-size: 500%;
+
+	filter: blur(6px);
+}
+
+
+@keyframes animate {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 500% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+
+.lista {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.lista div {
+	text-align: center;
+	padding: 3vh;
+
+	font-weight: bold;
+	font-size: 23px;
+}
+
+.lista div a {
+	position: relative;
+	text-decoration: none;
+
+	color: var(--primary);
+}
+
+.lista div a:after {
+	position: absolute;
+
+	content: '';
+
+	height: 3px;
+	width: 0;
+	left: 0;
+	bottom: -6px;
+
+	transition: 0.3s;
+
+	border-radius: 10px;
+
+	background-color: var(--secondary);
+}
+
+.lista div a:hover:after {
+	width: 100%;
+}
+
+.informatii {
+	font-size: 20px;
+	margin: 60px 100px;
+}
+
+.informatii div {
+	margin: 20px 0px;
+}
+
+.textColorat {
+	color: var(--roz);
+}

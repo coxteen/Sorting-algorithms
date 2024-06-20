@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	
+	<title>QuickSort Sort</title>
+
+	<link href="QS_style.css" rel="stylesheet" />
+</head>
+
+<body >
+
+	<div class="PagPr"><a href="PP_html.html">Acasă</a></div>
+
+	<section class="titlu">Sortarea rapida</section>
+	<section class="continut"></section>
+		
+	<div class="butoane">
+		<button onclick="generate()" id="Buton1" >
+			Genereaza</button>
+			
+		<button onclick="SelectionSort(), disable()" id="Buton2" >
+			Sorteaza</button>
+	</div>
+
+
+	<div class="descriere">
+		
+		<div class="baraOrizontala"></div>
+
+		<div class="text">
+			<h3 id="indent1">Mod de functionare</h3>
+
+			<p>Sortarea prin interclasare este o metodă eficientă de sortare a elementelor unui tablou, bazată pe următoarea idee: dacă prima jumătate a tabloului are elementele sortate și a doua jumătate are de asemenea elementele sortate, prin interclasare se va obține tabloul sortat.</p>
+			<p>Sortarea prin interclasare este un exemplu tipic de algoritm divide et impera: se sortează o secvență delimitată de indicii st și dr:</p>
+			<ul>
+				<li>dacă st <= dr, problema este elementară, secvența fiind deja sortată</li>
+				<li>dacă st < dr:</li>
+				<ul>
+					<li>se împarte problema în subprobleme, identificând mijlocul secvenței, m = (st + dr) / 2;</li>
+					<li>se rezolvă subproblemele, sortând secvența delimitată de st și m, respectiv secvența delimitată de m+1 și dr - apeluri recursive;</li>
+					<li>se combină soluțiile, interclasând cele două secvențe; în acest fel, secvența delimitată de st și dr este sortată.</li>
+				</ul>
+			</ul>
+		</div>
+
+		<div class="text">
+			<h3 id="indent1">Complexitate</h3>
+
+			<p>Acest algoritm are o complexitate O(n*log(n)), fiind printre cei mai buni, eficienti, si rapizi algoritmi de sortare.</p>
+			
+		</div>
+
+		<div class="baraOrizontala"></div>
+
+		<h3 id="indent1">Algoritm in C++</h3>
+
+		<div class="cod">
+
+			<p class="aqua">void</p>
+			<p>partitie<p class="roz">(</p><p class="aqua">int</p></p>
+			<p>v<p class="roz">[],</p></p>
+			<p class="aqua">int</p>
+			<p>start<p class="roz">,</p></p>
+			<p class="aqua">int</p>
+			<p>end<p class="roz">)</p></p>
+
+			<br>
+
+			<p class="roz">{</p>
+
+			<br>
+
+			<p id="indent1" class="aqua" >int</p>
+			<p>pivot</p>
+			<p class="roz">=</p>
+			<p>v</p><p class="roz">[</p><p>end</p><p class="roz">]</p><p class="roz">;</p>
+
+			<br>
+
+			<p id="indent1" class="aqua" >int</p>
+			<p>part_index</p>
+			<p class="roz">=</p>
+			<p>start</p><p class="roz">;</p>
+
+			<br>
+			<br>
+
+			<p id="indent1" class="aqua" >for</p><p class="roz">(</p><p class="aqua">int</p>
+			<p>i</p>
+			<p class="roz">=</p>
+			<p>start</p><p class="roz">;</p>
+			<p>i</p>
+			<p class="roz"><</p>
+			<p>end</p><p class="roz">;</p>
+			<p class="roz">++</p><p>i</p><p class="roz">)</p>
+
+			<br>
+
+			<p id="indent2" class="aqua">if</p><p class="roz">(</p><p>v</p><p class="roz">[</p><p>i</p><p class="roz">]</p>
+			<p class="roz"><=</p>
+			<p>pivot</p><p class="roz">)</p>
+
+			<br>
+
+			<p id="indent3" class="aqua">swap</p><p class="roz">(</p><p>v</p><p class="roz">[</p><p>i</p><p class="roz">]</p><p class="roz">,</p>
+			<p>v</p><p class="roz">[</p><p>part_index</p><p class="roz">++</p><p class="roz">]</p><p class="roz">)</p><p class="roz">;</p>
+
+			<br>
+			<br>
+
+			<p id="indent1" class="aqua">swap</p><p class="roz">(</p><p>v</p><p class="roz">[</p><p>end</p><p class="roz">]</p><p class="roz">,</p>
+			<p>v</p><p class="roz">[</p><p>part_index</p><p class="roz">]</p><p class="roz">)</p><p class="roz">;</p>
+
+			<br>
+			<br>
+
+			<p id="indent1" class="aqua">return</p>
+			<p>part_index</p><p class="roz">;</p>
+
+			<br>
+
+			<p class="roz">}</p>
+
+			<br>
+			<br>
+
+			<p class="aqua">void</p>
+			<p>sortare<p class="roz">(</p><p class="aqua">int</p></p>
+			<p>v<p class="roz">[],</p></p>
+			<p class="aqua">int</p>
+			<p>start<p class="roz">,</p></p>
+			<p class="aqua">int</p>
+			<p>end<p class="roz">)</p></p>
+
+			<br>
+
+			<p class="roz">{</p> 
+
+			<br>
+
+			<p id="indent1" class="aqua">if<p class="roz">(</p><p>start</p>
+			<p class="roz"><</p>
+			<p>end<p class="roz">)</p></p>
+
+			<br>
+
+			<p class="roz" id="indent1">{</p>
+
+			<br>
+
+			<p id="indent2" class="aqua" >int</p>
+			<p>pivot_index</p>
+			<p class="roz">=</p>
+			<p>partitie</p><p class="roz">(</p><p>v</p><p class="roz">,</p>
+			<p>start</p><p class="roz">,</p>
+			<p>end</p><p class="roz">)</p><p class="roz">;</p>
+
+			<br>
+
+			<p id="indent2">partitie<p class="roz">(</p><p>v</p><p class="roz">,</p></p></p>
+			<p>start<p class="roz">,</p></p>
+			<p>pivot_index</p>
+			<p class="roz">-</p>
+			<p class="cifra" >1</p><p class="roz">)</p><p class="roz">;</p>
+
+			<br>
+
+			<p id="indent2">partitie<p class="roz">(</p><p>v</p><p class="roz">,</p></p></p>
+			<p>pivot_index</p>
+			<p class="roz">+</p>
+			<p class="cifra">1</p><p class="roz">,</p>
+			<p>end<p class="roz">)</p></p><p class="roz">;</p>
+
+			<br>
+
+			<p class="roz" id="indent1">}</p>
+
+			<br>
+
+			<p class="roz">}</p>
+
+		</div>
+
+	</div>
+
+</body>
+
+<script src="QS_script.js"></script>
+</html>

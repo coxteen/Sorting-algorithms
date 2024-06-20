@@ -1,0 +1,136 @@
+:root {
+  --background: #00001a;
+
+  --primary: #00fff2;
+  --secondary: #00ff6a;
+}
+
+body {
+	background-color: var(--background);
+	color: white;
+
+	font-family: monospace;
+}
+
+.titlu {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	font-size: 36px;
+	font-weight: bold;
+
+	padding: 3.6vh 0vh;
+}
+
+.titlu a {
+	text-decoration: none;
+
+	color: var(--primary);
+}
+
+.bar {
+	background: rgb(0,255,218);
+	position: relative;
+
+	margin: 0 3vw;
+	height: 5px;
+
+	border-radius: 30px;
+}
+
+#bar1 {
+	margin: 0 3vw;
+}
+
+#bar2 {
+	margin: 0 6vw;
+}
+
+.bar::before {
+	position: absolute;
+
+	inset: 0;
+	content: '';
+
+	background: linear-gradient(60deg, rgba(0,255,59,1) 100%, rgba(0,255,218,1) 36%);
+	animation: animate 20s linear infinite;
+	background-size: 500%;
+
+	filter: blur(6px);
+}
+
+@keyframes animate {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 500% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+
+.lista {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.lista div {
+	text-align: center;
+	padding: 3vh;
+
+	font-weight: bold;
+	font-size: 23px;
+}
+
+.lista div a {
+	position: relative;
+	text-decoration: none;
+
+	color: var(--primary);
+}
+
+.lista div a:after {
+	position: absolute;
+
+	content: '';
+
+	height: 3px;
+	width: 0;
+	left: 0;
+	bottom: -6px;
+
+	transition: 0.3s;
+
+	border-radius: 10px;
+
+	background-color: var(--secondary);
+}
+
+.lista div a:hover:after {
+	width: 100%;
+}
+
+.date {
+	display: grid;
+	align-items: center;
+	justify-content: center;
+
+	font-size: 23px;
+
+	margin: 10vh 26vw;
+
+	padding: 36px 0;
+
+	border: 2px solid var(--primary);
+	border-radius: 6px;
+
+	background-color: #0a0a0a;
+}
+
+.date div {
+	padding: 1.6vh 0;
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	
+	<title>Bubble Sort</title>
+
+	<link href="BS_style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+	<div class="PagPr"><a href="PP_html.html">Acasă</a></div>
+
+	<section class="titlu">Sortarea prin metoda bulelor</section>
+	<section class="continut"></section>
+		
+	<div class="butoane">
+		<button onclick="generate()" id="Buton1" >
+			Generează</button>
+			
+		<button onclick="SelectionSort(), disable()" id="Buton2" >
+			Sortează</button>
+	</div>
+
+
+	<div class="descriere">
+		
+		<div class="baraOrizontala"></div>
+
+		<div class="text">
+			<h3 id="indent1">Mod de funcționare</h3>
+
+			<p>Această metodă de sortare se bazează pe compararea valorilor alăturate, și interschimbarea lor în ordinea dorită.</p>
+			<p>După o singură parcurgere, vectorul nu va fi sortat, dar se va repeta parcurgerea vectorului și interschimbarea valorilor.</p>
+			<p>Dacă în urma parcurgerii nu se face nici o interschimbare, înseamnă că vectorul este sortat.</p>
+		</div>
+
+		<div class="text">
+			<h3 id="indent1">Complexitate</h3>
+
+			<p>Din punct al vedere al complexității acest algoritm este cel mai ineficient algoritm de sortare, datorită timpului pătratic de lucru (O(n<sup>2</sup>)) și datorită interschimbărilor repetate, dar totuși este un algoritm foarte ușor de implementat.</p>
+		</div>
+
+		<div class="baraOrizontala"></div>
+
+		<h3 id="indent1">Algoritm în C++</h3>
+
+		<div class="cod">
+
+			<p class="aqua">void</p>
+			<p>sortare <p class="roz">(</p><p class="aqua">int</p></p>
+			<p>v <p class="roz">[],</p></p>
+			<p class="aqua">int</p>
+			<p>n <p class="roz">)</p></p>
+
+			<br>
+
+			<p class="roz">{</p> 
+
+			<br>
+
+			<p id="indent1" class="aqua" >bool</p>
+		    <p>sortat</p><p class="roz">;</p></p>
+
+		    <br>
+
+		    <p id="indent1" class="aqua">do</p><p class="roz">{</p> 
+
+		    <br>
+
+		    <p id="indent2">sortat</p>
+		    <p class="roz">=</p>
+		    <p class="aqua">true<p class="roz">;</p></p>
+
+		    <br>
+
+			<p id="indent2" class="aqua">for <p class="roz">(</p><p class="aqua">int</p></p>
+			<p>i</p>
+			<p class="roz">=</p>
+			<p class="cifra">0<p class="roz">;</p></p>
+			<p>i</p>
+			<p class="roz"><</p>
+			<p>n</p>
+			<p class="roz">-</p>
+			<p class="cifra">1<p class="roz">;</p></p>
+			<p class="roz">++</p><p>i<p class="roz">)</p></p></p>
+
+		    <br>
+
+		    <p id="indent3" class="aqua">if<p class="roz">(</p><p>v</p><p class="roz">[</p><p>i</p><p class="roz">]</p></p>
+			<p class="roz">></p>
+			<p>v<p class="roz">[</p><p>i</p>
+			<p class="roz">+</p>
+			<p class="cifra">1</p><p class="roz">]</p><p class="roz">)</p></p>
+	        
+			<br>
+
+		    <p id="indent3" class="roz">{</p> 
+
+	        <br>
+
+		    <p id="indent4" class="aqua">swap<p class="roz">(</p><p>v</p><p class="roz">[</p><p>i</p><p class="roz">]</p><p class="roz">,</p></p>
+			<p>v<p class="roz">[</p><p>i</p>
+			<p class="roz">+</p>
+			<p class="cifra">1</p><p class="roz">]</p><p class="roz">)</p><p class="roz">;</p></p>
+
+			<br>
+
+			<p id="indent4">sortat</p>
+		    <p class="roz">=</p>
+		    <p class="aqua">false<p class="roz">;</p></p>
+
+			<br>
+
+			<p id="indent3" class="roz">}</p>
+
+			<br>
+
+		    <p id="indent1" class="roz">}</p><p class="aqua" >while</p><p class="roz">(</p><p class="roz">!</p></p><p>sortat</p><p class="roz">)</p><p class="roz">;</p></p>
+
+		    <br>
+
+			<p class="roz">}</p>
+
+		</div>
+
+	</div>
+
+</body>
+
+<script src="BS_script.js"></script>
+</html>
